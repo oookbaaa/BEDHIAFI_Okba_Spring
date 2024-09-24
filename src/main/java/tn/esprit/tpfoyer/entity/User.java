@@ -1,9 +1,8 @@
-package tn.esprit.tpfoyer;
+package tn.esprit.tpfoyer.entity;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "T_Etudiant")
 public class User {
 
     @Id
