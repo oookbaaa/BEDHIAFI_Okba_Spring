@@ -14,5 +14,6 @@ public class Chambre {
     private Long num;
 
     @Column(name = "chb_type")
+    @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
 }
