@@ -1,56 +1,28 @@
 package tn.esprit.tpfoyer.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
+@Getter
+@Setter  // Apply setters for all fields except id
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString(exclude = "id",includeFieldNames = false)  // Exclude id and attribute names in toString
+@EqualsAndHashCode(exclude = "id")  // Exclude id from equals and hashCode
+@FieldDefaults(level = AccessLevel.PRIVATE)  // All fields are private
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "etd_id")
-    private Long id;
+     @Setter(AccessLevel.NONE)  // Exclude id from having a setter
+      Long id;
 
     @Column(name = "etd_nom")
-    private String nom;
+       String nom;
 
     @Column(name = "etd_prenom")
-    private String prenom;
-
-    // Constructors
-    public User() {
-    }
-
-    public User(String nom, String prenom) {
-        this.nom = nom;
-        this.prenom = prenom;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-
-
+       String prenom;
 }
-
