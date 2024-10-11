@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "T_Etudiant")
@@ -38,4 +39,7 @@ public class Etudiant {
 
     @Column(name = "etd_dob")
       Date dob;
+
+    @ManyToMany(mappedBy="etudiants", cascade = CascadeType.ALL)
+    private Set<Reservation> reservations;
 }

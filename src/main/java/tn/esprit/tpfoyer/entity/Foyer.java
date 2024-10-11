@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Table(name = "T_Foyer")
 @Getter
@@ -27,4 +30,10 @@ public class Foyer {
 
     @Column(name = "fyr_capacite")
        Long capacite;
+
+    @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL)
+    private Set<Bloc> blocs;
+
+    @OneToOne(mappedBy = "foyer")
+    private Universite universites;
 }

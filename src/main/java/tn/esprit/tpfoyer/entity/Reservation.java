@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "T_reservation")
@@ -30,4 +31,8 @@ public class Reservation {
     @Column(name = "rsv_validate_?")
     @ToString.Include(rank = 2)
     private Boolean estvalide;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Etudiant> etudiants;
+
 }

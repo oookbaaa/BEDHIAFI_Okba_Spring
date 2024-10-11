@@ -26,4 +26,7 @@ public class Universite {
 
     @Column(name = "unv_adresse")
      String adresse;
+
+    @OneToOne
+    private Foyer foyer;
 }
