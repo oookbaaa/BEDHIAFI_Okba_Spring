@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-@ToString(  exclude = "id"   , includeFieldNames = false     )  // Exclude id and attribute names
+@ToString( exclude = "id" , includeFieldNames = false)  // Exclude id and attribute names
 @EqualsAndHashCode(exclude = "id")  // Exclude id from equals and hashCode
 @FieldDefaults(level = AccessLevel.PRIVATE)  // Make all fields private except nom (which will be protected)
 public class Etudiant {
