@@ -3,13 +3,13 @@ package tn.esprit.tpfoyer.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.tpfoyer.entity.Etudiant;
-import tn.esprit.tpfoyer.services.EtudiantRepository;
+import tn.esprit.tpfoyer.repository.EtudiantRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EtudiantService {
+public class EtudiantServiceImpl implements IEtudiantService {
 
     @Autowired
     private EtudiantRepository etudiantRepository;
