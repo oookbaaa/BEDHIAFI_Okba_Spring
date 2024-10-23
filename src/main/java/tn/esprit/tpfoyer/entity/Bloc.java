@@ -21,7 +21,6 @@ public class Bloc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "blc_id")
-    @Setter(AccessLevel.NONE)
      Long id;
 
     @Column(name = "blc_nom")
